@@ -16,3 +16,10 @@ Commands:
 
 /8 dmgsh none      #turns on/off no Damage numbers
 
+
+
+instruction:
+
+put \_Shader Folder into
+TERA\\S1Game\\CookedPC\\Art\_Data\\Packages\\
+
