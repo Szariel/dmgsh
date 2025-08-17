@@ -4,7 +4,7 @@
   "category": "network",
   "author": "Szariel",
   "description": "Damage shortener: rundet und /1000 (100700 → 101[k]). Toggle: /8 dmgsh.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "options": { "guiName": "dmgsh", "cliName": "dmgsh", "reloadable": true },
   "servers": ["https://raw.githubusercontent.com/Szariel/dmgsh/main/update/"],
 }
