@@ -1,5 +1,5 @@
 # dmgsh
-<img width="451" height="303" alt="TERA_ScreenShot_20250816_160812" src="https://github.com/user-attachments/assets/a2c0bbea-8c4f-4d2a-8d5a-6fcfea69ae2d" />
+<img width="283" height="131" alt="Screenshot 2025-08-17 032832" src="https://github.com/user-attachments/assets/9aff67ea-6076-4d6e-af41-435e73f94593" />
 
 Damage shortener, which rounds and divides the Damage by 1000 \[100700 → 101(k)]
 
