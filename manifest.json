@@ -1,10 +1,10 @@
 {
   "files": {
     "config.json": "2060d8d8139b28eb1ff967beacedeeb151a25f092ec91c96fbc5953178fee9f8",
-    "index.js": "c4c253e615603b9ea7040299c9c52cff521787c523cb393466dd93243f3952ef",
+    "index.js": "c297380f4e20a448c8a94f08fbfd334cc5491c72db8df5afd9d3b3da202996b1",
     "module.json": {
       "overwrite": false,
-      "hash": "943ab15c9ff2c97cbdd42eec1587be57ad7623db562a149173cb1909661b80cc"
+      "hash": "525d099fa3fb3b344d1cd61a6ca55eca3c203e2d4b6682d0666f6d10aaf77efa"
     }
   }
 }

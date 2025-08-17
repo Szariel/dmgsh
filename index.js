@@ -39,8 +39,13 @@ module.exports.NetworkMod = function DmgSh(mod) {
     }
   }
 
+  const me = () => mod.game.me.gameId;
+  const eq = (a,b) => { if (a==null||b==null) return false; try { return BigInt(a)===BigInt(b); } catch { return Number(a)===Number(b); } };
+  const isMine = (ev) => [ev.source,ev.sourceId,ev.owner,ev.ownerId,ev.attacker,ev.attackerId,ev.cid,ev.masterId,ev.projectileOwnerId].some(x => eq(x, me()));
+
   function processDamageLike(ev, keys) {
     if (!cfg.enabled) return;
+    if (eq(ev.target, me())) return;
     if (cfg.hideAll) return false;
     if (cfg.critOnly && !isCrit(ev)) return false;
     const ks = presentKeys(ev, keys);
@@ -60,6 +65,7 @@ module.exports.NetworkMod = function DmgSh(mod) {
 
   function processHpDelta(ev) {
     if (!cfg.enabled) return;
+    if (eq(ev.target, me())) return;
     const ks = presentKeys(ev, HP_KEYS);
     if (ks.length === 0) return;
     if (cfg.hideAll) {
@@ -106,7 +112,7 @@ module.exports.NetworkMod = function DmgSh(mod) {
   function maybePrintSignDelayed() {
     if (signPrinted || !cfg.sign) return;
     signPrinted = true;
-    setTimeout(() => printSignLog(), 1200); 
+    setTimeout(() => printSignLog(), 1200);
   }
   try { mod.game.me.on('enter_game',           maybePrintSignDelayed); } catch {}
   try { mod.game.me.on('leave_loading_screen', maybePrintSignDelayed); } catch {}
@@ -143,6 +149,3 @@ module.exports.NetworkMod = function DmgSh(mod) {
   }
   function saveCfg() { fs.writeFileSync(cfgPath, JSON.stringify(cfg, null, 2)); }
 };
-
-
-
