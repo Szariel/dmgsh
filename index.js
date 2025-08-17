@@ -102,14 +102,12 @@ module.exports.NetworkMod = function DmgSh(mod) {
 
   function printSignLog() { for (const line of sign) mod.log(line); }
 
-  // --- Sign: nur einmal NACH Login/Loading-Screen ausgeben ---
   let signPrinted = false;
   function maybePrintSignDelayed() {
     if (signPrinted || !cfg.sign) return;
     signPrinted = true;
-    setTimeout(() => printSignLog(), 1200); // kleiner Delay wie bei vielen Mods
+    setTimeout(() => printSignLog(), 1200); 
   }
-  // robust über mehrere Trigger
   try { mod.game.me.on('enter_game',           maybePrintSignDelayed); } catch {}
   try { mod.game.me.on('leave_loading_screen', maybePrintSignDelayed); } catch {}
   safeHook('S_LOGIN', () => { maybePrintSignDelayed(); });
@@ -145,5 +143,6 @@ module.exports.NetworkMod = function DmgSh(mod) {
   }
   function saveCfg() { fs.writeFileSync(cfgPath, JSON.stringify(cfg, null, 2)); }
 };
+
 
 
